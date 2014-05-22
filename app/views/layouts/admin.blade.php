@@ -358,7 +358,7 @@
 
 					<ul class="nav nav-list">
 						<li  {{(Request::is('dashboard*')) ? 'class="active"' : '' }}>
-							<a href="/dashboard">
+							<a href="dashboard">
 								<i class="icon-dashboard"></i>
 								<span class="menu-text"> Dashboard </span>
 
@@ -375,7 +375,7 @@
 
 							<ul class="submenu">
 								<li {{(Request::is('pessoas*')) ? 'class="active"' : '' }}>
-									<a href="/pessoas">
+									<a href="pessoas">
 										<i class="icon-double-angle-right"></i>
 										Lista de lojas
 									</a>

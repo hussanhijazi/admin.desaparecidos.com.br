@@ -1,12 +1,12 @@
 <?php
-
-class PessoasApiController extends Controller {
+namespace Api;
+class PessoasApiController extends BaseController {
 
  //	protected $layout = 'layouts.admin';
 
 	public function __construct()
 	{
-		$this->beforeFilter('csrf', array('on' => 'post'));
+		//$this->beforeFilter('csrf', array('on' => 'post'));
 		//$this->beforeFilter('auth.basic');
 	}
 	/**
@@ -18,7 +18,7 @@ class PessoasApiController extends Controller {
 	{
 		if ( ! is_null($this->layout))
 		{
-			$this->layout = View::make($this->layout);
+			$this->layout =  \View::make($this->layout);
 		}
 	}
 	function getLayout()
@@ -31,15 +31,15 @@ class PessoasApiController extends Controller {
 	    // return Response::json(
 	    //    Pessoa::all()->toArray()
     	//  );
-    	 return Response::json(
-	       Pessoa::where('situacao', '=', 'Desaparecido(a)')->orderBy('data_des', 'desc')->get()
+    	 return \Response::json(
+	       \Pessoa::where('situacao', '=', 'Desaparecido(a)')->orderBy('data_des', 'desc')->get()
     	 );
 	}
 	public function show($id = null) 
 	{
 		
- 	    return Response::json(
-	        Pessoa::where('id', $id)
+ 	    return \Response::json(
+	        \Pessoa::where('id', $id)
             ->take(1)
             ->get()->toArray())
 	     ;

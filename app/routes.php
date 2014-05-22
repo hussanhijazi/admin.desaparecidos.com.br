@@ -13,17 +13,22 @@
 
 
 Route::get('/', function(){
-	return Redirect::to('home');
+	return Redirect::to('admin/home');
 })->before('auth');
+
 Route::get('logout', array('uses' => 'HomeController@logout'));
-Route::get('login', array('uses' => 'HomeController@login'));
-Route::post('login', array('uses' => 'HomeController@auth'));
-Route::controller('home', 'HomeController');
-Route::get('pessoas', array('uses' => 'PessoasController@getIndex'));
-Route::get('pessoas/robot', array('uses' => 'PessoasController@getRobot'));
+Route::get('login', array('uses' => 'Admin\HomeController@login'));
+Route::post('login', array('uses' => 'Admin\HomeController@auth'));
+
+Route::group(array('prefix' => 'admin' , 'namespace' => 'Admin'/*, 'before' => 'auth.basic'*/), function()
+{
+	Route::controller('home', 'HomeController');
+	Route::get('pessoas', array('uses' => 'PessoasController@getIndex'));
+	Route::get('pessoas/robot', array('uses' => 'PessoasController@getRobot'));
+});
 
 
-Route::group(array('prefix' => 'api' /*, 'before' => 'auth.basic'*/), function()
+Route::group(array('prefix' => 'api', 'namespace' => 'Api' /*, 'before' => 'auth.basic'*/), function()
 {
     Route::get('pessoas', 'PessoasApiController@listar');
 	Route::get('pessoas/{id}', 'PessoasApiController@show');

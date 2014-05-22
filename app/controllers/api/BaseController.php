@@ -1,13 +1,12 @@
 <?php
-namespace Admin;
+namespace Api;
 class BaseController extends \Controller {
 
  	protected $layout = 'layouts.admin';
 
 	public function __construct()
 	{
-		$this->beforeFilter('csrf', array('on' => 'post'));
-		$this->beforeFilter('auth');
+	
 	}
 	/**
 	 * Setup the layout used by the controller.

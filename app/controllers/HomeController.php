@@ -1,5 +1,5 @@
 <?php
-
+namespace Admin;
 class HomeController extends BaseController {
 
 	/*
@@ -22,13 +22,13 @@ class HomeController extends BaseController {
 	public function login()
 	{
 		$this->layout =  'layouts.login';
-		return View::make('login');
+		return \View::make('login');
 
 	}
 	public function logout()
 	{
 		Auth::logout();
-		return Redirect::to('login');
+		return \Redirect::to('login');
 	}
 	public function auth()
 	{
@@ -39,20 +39,20 @@ class HomeController extends BaseController {
 		);
 
 		// run the validation rules on the inputs from the form
-		$validator = Validator::make(Input::all(), $rules);
+		$validator = \Validator::make(\Input::all(), $rules);
 
 		// if the validator fails, redirect back to the form
 		if ($validator->fails()) {
 
-			return Redirect::to('login')
+			return \Redirect::to('login')
 				->withErrors($validator) // send back all errors to the login form
-				->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
+				->withInput(\Input::except('password')); // send back the input (not the password) so that we can repopulate the form
 		} else {
 		
 			// create our user data for the authentication
 			$userdata = array(
-				'login' 	=> Input::get('email'),
-				'password' 	=> Input::get('password')
+				'login' 	=> \Input::get('email'),
+				'password' 	=> \Input::get('password')
 			);
 			// $user = new User();
 			// $user->login = Input::get('email');
@@ -60,21 +60,21 @@ class HomeController extends BaseController {
 			
 			
 			// attempt to do the login
-			if (Auth::attempt($userdata)) {
+			if (\Auth::attempt($userdata)) {
 
 				// validation successful!
 				// redirect them to the secure section or whatever
 				// return Redirect::to('secure');
 				// for now we'll just echo success (even though echoing in a controller is bad)
 				//echo 'SUCCESS!';
-				return Redirect::to('/');
+				return \Redirect::to('/');
 				
 
 			} else {	 	
 
 				Session::flash('message', 'Erro ao afetuar o login :(');
 				// validation not successful, send back to form	
-				return Redirect::to('login');
+				return \Redirect::to('login');
 
 			}
 
