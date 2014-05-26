@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://youpost.local',
+	'url' => 'http://desaparecidos.local',
 
 	/*
 	|--------------------------------------------------------------------------

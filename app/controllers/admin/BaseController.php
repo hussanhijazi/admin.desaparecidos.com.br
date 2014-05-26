@@ -1,13 +1,13 @@
 <?php
+namespace Admin;
+class BaseController extends \Controller {
 
-class BaseController extends Controller {
-
- 	protected $layout = 'layouts.site';
+ 	protected $layout = 'layouts.admin';
 
 	public function __construct()
 	{
-		// $this->beforeFilter('csrf', array('on' => 'post'));
-		// $this->beforeFilter('auth');
+		$this->beforeFilter('csrf', array('on' => 'post'));
+		$this->beforeFilter('auth');
 	}
 	/**
 	 * Setup the layout used by the controller.

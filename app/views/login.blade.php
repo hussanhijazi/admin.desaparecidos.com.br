@@ -19,7 +19,7 @@
                             
                         </div>
                         @endif
-                        <form role="form" action="/login" method="post">
+                        <form role="form" action="/admin/login" method="post">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Usuário..." name="email" type="text" autofocus>

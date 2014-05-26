@@ -32,7 +32,7 @@ class PessoasApiController extends BaseController {
 	    //    Pessoa::all()->toArray()
     	//  );
     	 return \Response::json(
-	       \Pessoa::where('situacao', '=', 'Desaparecido(a)')->orderBy('data_des', 'desc')->get()
+	       \Pessoa::where('situacao', '=', 'Desaparecido(a)')->remember(60)->orderBy('data_des', 'desc')->get()
     	 );
 	}
 	public function show($id = null) 

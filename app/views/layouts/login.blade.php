@@ -9,13 +9,13 @@
     <title>Login </title>
 
     <!-- Core CSS - Include with every page -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/font/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/assets/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/admin/font/font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <!-- Page-Level Plugin CSS - Blank -->
 
     <!-- SB Admin CSS - Include with every page -->
-    <link href="/css/sb-admin.css" rel="stylesheet">
+    <link href="/css/admin/sb-admin.css" rel="stylesheet">
 
 </head>
 

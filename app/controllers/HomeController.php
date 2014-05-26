@@ -1,5 +1,5 @@
 <?php
-namespace Admin;
+
 class HomeController extends BaseController {
 
 	/*
@@ -14,76 +14,46 @@ class HomeController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
- 
-  	public function __construct()
+
+	public function __construct()
 	{
-		$this->beforeFilter('auth', array('except' => array('login', 'auth')));
-	}
-	public function login()
-	{
-		$this->layout =  'layouts.login';
-		return \View::make('login');
 
 	}
-	public function logout()
+	public function index()
 	{
-		Auth::logout();
-		return \Redirect::to('login');
+
 	}
-	public function auth()
+	public function contato()
 	{
-		// validate the info, create rules for the inputs
-		$rules = array(
-			'email'    => 'required|email', // make sure the email is an actual email
-			'password' => 'required|alphaNum|min:3' // password can only be alphanumeric and has to be greater than 3 characters
-		);
 
-		// run the validation rules on the inputs from the form
-		$validator = \Validator::make(\Input::all(), $rules);
-
-		// if the validator fails, redirect back to the form
-		if ($validator->fails()) {
-
-			return \Redirect::to('login')
-				->withErrors($validator) // send back all errors to the login form
-				->withInput(\Input::except('password')); // send back the input (not the password) so that we can repopulate the form
-		} else {
-		
-			// create our user data for the authentication
-			$userdata = array(
-				'login' 	=> \Input::get('email'),
-				'password' 	=> \Input::get('password')
+		// if (Request::ajax())
+		// {
+			$rules = array(
+				'nome' => 'required',
+				'email' => 'required|email',
+				'mensagem' => 'required'
 			);
-			// $user = new User();
-			// $user->login = Input::get('email');
-			// $user->senha = md5(Input::get('password'));
+			$input = Input::all();
+			$validation = Validator::make($input, $rules);
 			
-			
-			// attempt to do the login
-			if (\Auth::attempt($userdata)) {
-
-				// validation successful!
-				// redirect them to the secure section or whatever
-				// return Redirect::to('secure');
-				// for now we'll just echo success (even though echoing in a controller is bad)
-				//echo 'SUCCESS!';
-				return \Redirect::to('/');
+			if ($validation->passes())
+			{	
 				
-
-			} else {	 	
-
-				Session::flash('message', 'Erro ao afetuar o login :(');
-				// validation not successful, send back to form	
-				return \Redirect::to('login');
-
+				echo Mail::send('emails.contato', $input, function($message)
+				{
+					$message->to("contato@desaparecidosbr.org", 'Contato desaparecidosBR.org')->subject('Contato site desaparecidosBR.org');
+				});
 			}
+			else
+			{
+				
+				//var_dump($validation->getMessages()->all());
+				echo json_encode($validation->failed());
+			}
+		//}
 
-		}
+		exit;
 	}
-	public function getIndex()
-	{
 
-	}
-	
 
 }
