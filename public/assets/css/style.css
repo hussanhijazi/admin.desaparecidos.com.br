@@ -8,7 +8,18 @@ by EGrappler.com
 body {font-family: 'Noto Sans', sans-serif;}
 
 /* Headlines */
-
+.share_box{
+	position:fixed;
+	width:150px;
+	top:20%;
+	left:0%;
+	/*border:1px dashed #79B242;*/
+	background:transparent;
+	padding:15px;
+	-webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+}
 h2 {
 	color: #79B242;
 	font-size: 50px;

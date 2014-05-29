@@ -132,7 +132,7 @@ class PessoasController extends BaseController {
 					$pessoaModel = new \stdClass;
 					$pessoaModel->id = $id;
 					echo $pessoaModel->nome = $nome;
-					echo " - inserido...";
+					echo " - inserido...\n";
 					$pessoaModel->situacao = $situacao;
 					$pessoaModel->foto = $foto;
 					$pessoaModel->data_des = $data_des;
@@ -159,7 +159,7 @@ class PessoasController extends BaseController {
 					
 					$pessoaModel->id = $id;
 				echo $pessoaModel->nome = $nome;
-				echo " - atualizado...";
+				echo " - atualizado...\n";
 					$pessoaModel->situacao = $situacao;
 					$pessoaModel->foto = $foto;
 					$pessoaModel->data_des = $data_des;
@@ -181,7 +181,7 @@ class PessoasController extends BaseController {
 					
 				}
 
-				echo "\n";
+				
 				//var_dump($res);
 				
 			}

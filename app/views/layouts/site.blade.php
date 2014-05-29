@@ -8,8 +8,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Desaparecidos Brasil - Aplicativo de pessoas desaparecidas </title>
-
+  <title>Desaparecidos Brasil - Aplicativo de pessoas desaparecidas no Brasil</title>
+	<meta name="description" content="Aplicativo que tenta ajudar de alguma forma a encontrar pessoas desaparecidas no Brasil."/> 
   <link rel="stylesheet" href="/assets/css/normalize.css" />
   <link rel="stylesheet" href="/assets/css/foundation.min.css" />
   <link rel="stylesheet" href="/assets/css/style.css" />
@@ -20,6 +20,35 @@
   <script src="/assets/js/vendor/custom.modernizr.js"></script>
 </head>
 <body>
+	<div class="share_box">
+    	<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&appId=602770343164113&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="fb-like" data-href="http://www.desaparecidosbr.org/" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>
+		<!-- Posicione esta tag onde você deseja que o botão +1 apareça. -->
+		<div style="height:10px"></div>
+		<div class="g-plusone" data-size="tall" data-annotation="none" data-href="http://www.desaparecidosbr.org/" ></div>
+		
+		<!-- Posicione esta tag depois da última tag do botão +1. -->
+		<script type="text/javascript">
+		  window.___gcfg = {lang: 'pt-BR'};
+
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/platform.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+		<div style="height:2px"></div>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-lang="pt">Tweetar</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+
 <div id="top"  data-magellan-expedition="fixed">
 	<div class="row">
 		<div class="large-12 columns">
@@ -33,9 +62,10 @@
 			
 			  <section class="top-bar-section">
 			    <ul class="right" id="menu">
-			     
+			    
 			      <li data-magellan-arrival="infos"><a href="#infos">Informações</a></li> 
 			      <li data-magellan-arrival="contact"><a href="#contato">Contato</a></li>
+			     
 			    </ul>
 			  </section>
 			</nav>
@@ -92,7 +122,7 @@
 		<div class="large-4 columns feature">
 			<span class="icon icon-phone hi-icon"></span>
 			<h3>Ajude</h3>
-			<p>ATENÇÃO: Se você tem informações que ajudem na busca e localização dessa pessoa, entre em contado com a Delegacia de Polícia ou Conselho Tutelar de sua Cidade. Ou Disque 100, a ligação é gratuita e sigilosa.
+			<p>ATENÇÃO: Se você tem informações que ajudem na busca e localização de alguma pessoa, entre em contado com a Delegacia de Polícia ou Conselho Tutelar de sua Cidade. Ou Disque 100, a ligação é gratuita e sigilosa.
 
 </p>
 		</div>
