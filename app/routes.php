@@ -37,6 +37,7 @@ Route::group(array('prefix' => 'admin' , 'namespace' => 'Admin' /*, 'before' => 
 //api
 Route::group(array('prefix' => 'api', 'namespace' => 'Api', 'before' => 'cache', 'after' => 'cache' /*, 'before' => 'auth.basic'*/), function()
 {
+
     Route::get('pessoas', 'PessoasApiController@listar');
 	Route::get('pessoas/{id}', 'PessoasApiController@show');
 

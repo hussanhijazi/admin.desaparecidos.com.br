@@ -1,6 +1,6 @@
 <?php
 namespace Api;
-class PessoasApiController extends BaseController {
+class PessoasApiController extends \Controller {
 
  //	protected $layout = 'layouts.admin';
 
@@ -31,8 +31,13 @@ class PessoasApiController extends BaseController {
 	    // return Response::json(
 	    //    Pessoa::all()->toArray()
     	//  );
-    	 return \Response::json(
-	       \Pessoa::where('situacao', '=', 'Desaparecido(a)')->remember(60)->orderBy('data_des', 'desc')->get()
+    	$response =  \Response::json(
+	       	\Pessoa::where('situacao', '=', 'Desaparecido(a)')->remember(60)->orderBy('data_des', 'desc')->get(),
+	       	200,
+	       	array('Content-Type' => 'application/json')
+	       );
+    	//$response->header('Content-Type' , 'application/json');
+    	 return($response
     	 );
 	}
 	public function show($id = null) 
@@ -41,7 +46,10 @@ class PessoasApiController extends BaseController {
  	    return \Response::json(
 	        \Pessoa::where('id', $id)
             ->take(1)
-            ->get()->toArray())
+            ->get()->toArray(),
+			200,
+	       	array('Content-Type' => 'application/json')
+            )
 	     ;
 	    
 	}
