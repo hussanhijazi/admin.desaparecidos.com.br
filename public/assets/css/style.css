@@ -200,7 +200,7 @@ header .large-8 {
 	width: 208px
 }
 
-.download-btn {
+.download-btn-play {
 
 	padding: 35px 91px;
 background-image: url(../img/android-play.png);
@@ -213,9 +213,27 @@ margin: 20px 0 0 0;
 	-ms-border-radius:3px
 }
 
-.download-btn:hover {
+.download-btn-play:hover {
 	background-color:rgba(0,0,0,.25);
 	background-color:111
+}
+.download-btn-apple {
+
+    padding: 35px 91px;
+    background-image: url(../img/app-store.png);
+
+    float: left;
+    margin: 20px 0 0 0;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    -o-border-radius:3px;
+    -ms-border-radius:3px
+}
+
+.download-btn-apple:hover {
+    background-color:rgba(0,0,0,.25);
+    background-color:111
 }
 
 /* Product */

@@ -97,8 +97,10 @@
 		<div class="large-6 columns">
 			<h1>Aplicativo desaparecidosBR</h1>
 			<span class="subheading">Aplicativo que tenta ajudar de alguma forma a encontrar pessoas desaparecidas</span>
-		   <a class="download-btn" href="https://play.google.com/store/apps/details?id=org.desaparecidosbr.app" target="_blank"></a>
+		   <a class="download-btn-play" href="https://play.google.com/store/apps/details?id=org.desaparecidosbr.app" target="_blank"></a>
+            <a class="download-btn-apple" href="https://itunes.apple.com/pt/app/desaparecidos-brasil/id969825508?mt=8" target="_blank"></a>
 		</div>
+
 		
 	</div>
 </header>
